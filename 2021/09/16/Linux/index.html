@@ -1,0 +1,1606 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Linux | Benson</title><meta name="keywords" content="Linux"><meta name="author" content="Benson"><meta name="copyright" content="Benson"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux Linux学习方向 Linux运维工程师 LInux嵌入工程师 Linux下做各种程序开发   Linux应用领域 个人桌面应用领域 服务器应用领域 嵌入式应用领域    Linux基础篇——入门 Linux介绍 Linux读法——【利纽克斯，利尼克斯，利纳克斯】 Linux是一款操作系统，免费，开源，安全，高效，稳定，处理高并发非常强悍。现在很多企业级项目都部署到Linux&#x2F;unix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="https://benson-q.github.io/2021/09/16/Linux/index.html">
+<meta property="og:site_name" content="Benson">
+<meta property="og:description" content="Linux Linux学习方向 Linux运维工程师 LInux嵌入工程师 Linux下做各种程序开发   Linux应用领域 个人桌面应用领域 服务器应用领域 嵌入式应用领域    Linux基础篇——入门 Linux介绍 Linux读法——【利纽克斯，利尼克斯，利纳克斯】 Linux是一款操作系统，免费，开源，安全，高效，稳定，处理高并发非常强悍。现在很多企业级项目都部署到Linux&#x2F;unix">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/10.jpeg">
+<meta property="article:published_time" content="2021-09-16T13:55:01.000Z">
+<meta property="article:modified_time" content="2021-09-16T13:43:47.808Z">
+<meta property="article:author" content="Benson">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/10.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://benson-q.github.io/2021/09/16/Linux/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-16 21:43:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/P1/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/10.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Benson</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-16T13:55:01.000Z" title="发表于 2021-09-16 21:55:01">2021-09-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-09-16T13:43:47.808Z" title="更新于 2021-09-16 21:43:47">2021-09-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><ul>
+<li>Linux学习方向<ul>
+<li>Linux运维工程师</li>
+<li>LInux嵌入工程师</li>
+<li>Linux下做各种程序开发</li>
+</ul>
+</li>
+<li>Linux应用领域<ul>
+<li>个人桌面应用领域</li>
+<li>服务器应用领域</li>
+<li>嵌入式应用领域</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux基础篇——入门"><a href="#Linux基础篇——入门" class="headerlink" title="Linux基础篇——入门"></a>Linux基础篇——入门</h2><ul>
+<li>Linux介绍<ul>
+<li>Linux读法——【利纽克斯，利尼克斯，利纳克斯】</li>
+<li>Linux是一款操作系统，免费，开源，安全，高效，稳定，处理高并发非常强悍。现在很多企业级项目都部署到Linux/unix服务器运行</li>
+<li>Linux创始人-linus-林纳斯</li>
+<li>Linux吉祥物——企鹅 Tux</li>
+<li>Linux主要发行版<ul>
+<li>Redhat<ul>
+<li>CentOSE</li>
+<li>Redhat</li>
+</ul>
+</li>
+<li>Ubantu</li>
+<li>Suse</li>
+<li>红旗Linux</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>目前主要操作系统<ul>
+<li>windows、Android、linux ·······</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Linux和Unix的关系</p>
+<ul>
+<li><p>UNIX 系统诞生于贝尔实验室</p>
+<p><strong>UNIX</strong>最开始的名字是 <strong>UNICS</strong>(<strong>UN</strong>iplexed <strong>I</strong>nformation and <strong>C</strong>omputing <strong>S</strong>ervice)，它有一个大家庭，并不是从石头缝里蹦出来的。UNIX的祖父是 <strong>CTSS</strong>(<strong>C</strong>ompatible <strong>T</strong>ime <strong>S</strong>haring <strong>S</strong>ystem)，它的父亲是 <strong>Multics</strong>(<strong>MULT</strong>iplexed <strong>I</strong>nformation and <strong>C</strong>omputing <strong>S</strong>ervice)，这个系统能支持大量用户通过交互式分时（timesharing）的方式使用大型机。</p>
+<p>UNIX 诞生于 <strong>1969</strong>年，由<strong>肯·汤普森</strong>以及后来加入的<strong>丹尼斯·里奇</strong>共同完成。这两位优秀的研究员和科学家在一个<strong>通用电器 GE</strong>和<strong>麻省理工学院</strong>的合作项目里工作，项目目标是开发一个叫 Multics 的交互式分时系统。</p>
+<p>Multics 的目标是整合分时技术以及当时其他先进技术，允许用户在远程终端通过电话（拨号）登录到主机，然后可以编辑文档，阅读电子邮件，运行计算器，等等。</p>
+<p>在之后的五年里，AT&amp;T 公司为 Multics 项目投入了数百万美元。他们购买了 GE-645 大型机，聚集了贝尔实验室的顶级研究人员，例如肯·汤普森、 Stuart Feldman、丹尼斯·里奇、道格拉斯·麦克罗伊（M. Douglas McIlroy）、 Joseph F. Ossanna 以及 Robert Morris。但是项目目标太过激进，进度严重滞后。最后，AT&amp;T 高层决定放弃这个项目。</p>
+<p>贝尔实验室的管理层决定停止这个让许多研究人员无比纠结的操作系统上的所有遗留工作。不过要感谢汤普森，里奇和一些其他研究员，他们把老板的命令丢到一边，并继续在实验室里满怀热心地忘我工作，最终孵化出前无古人后无来者的 UNIX。</p>
+<p>UNIX 的第一声啼哭是在一台 PDP-7 微型机上，它是汤普森测试自己在操作系统设计上的点子的机器，也是汤普森和 里奇一起玩 Space and Travel 游戏的模拟器。</p>
+<blockquote>
+<p>“我们想要的不仅是一个优秀的编程环境，而是能围绕这个系统形成团体。按我们自己的经验，通过远程访问和分时主机实现的公共计算，本质上不只是用终端输入程序代替打孔机而已，而是鼓励密切沟通。”丹尼斯·里奇说。</p>
+</blockquote>
+<p>UNIX 是第一个靠近理想的系统，在这里程序员可以坐在机器前自由摆弄程序，探索各种可能性并随手测试。在 UNIX 整个生命周期里，它吸引了大量因其他操作系统限制而投身过来的高手做出无私贡献，因此它的功能模型一直保持上升趋势。</p>
+<p>UNIX 上的 C 语言革命</p>
+<p>丹尼斯·里奇在 1972 年发明了一种叫 “<strong>C</strong>” 的高级编程语言 ，之后他和肯·汤普森决定用 “C” 重写 UNIX 系统，来支持更好的移植性。他们在那一年里编写和调试了差不多 100,000 行代码。在迁移到 “C” 语言后，系统可移植性非常好，只需要修改一小部分机器相关的代码就可以将 UNIX 移植到其他计算机平台上。</p>
+<p>UNIX 第一次公开露面是 1973 年丹尼斯·里奇和肯·汤普森在操作系统原理（Operating Systems Principles）上发表的一篇论文，然后 AT&amp;T 发布了 UNIX 系统第 5 版，并授权给教育机构使用，之后在 1975 年第一次以 <strong>$20.000</strong>的价格授权企业使用 UNIX 第 6 版。应用最广泛的是 1980 年发布的 UNIX 第 7 版，任何人都可以购买授权，只是授权条款非常严格。授权内容包括源代码，以及用 PDP-11 汇编语言写的及其相关内核。反正，各种版本 UNIX 系统完全由它的用户手册确定。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="VM和Linux-Centos安装"><a href="#VM和Linux-Centos安装" class="headerlink" title="VM和Linux-Centos安装"></a>VM和Linux-Centos安装</h3><ul>
+<li>安装VM和CentOs</li>
+<li>安装vmtools</li>
+</ul>
+<h3 id="Linux文件系统目录结构"><a href="#Linux文件系统目录结构" class="headerlink" title="Linux文件系统目录结构"></a>Linux文件系统目录结构</h3><ul>
+<li><p>linux文件系统采用层级式的树状目录结构，在此结构中，最上层目录就是根目录“/”，然后在此目录下再创建其他的目录</p>
+</li>
+<li><p>在Linux世界中，一切皆文件</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_52.png"></p>
+</li>
+<li><p>/根目录（具体介绍）</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_53.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_54.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_55.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_56.png"></li>
+</ul>
+</li>
+<li><p>Linux的各个目录存放的内容是规划好的，不要乱放文件</p>
+</li>
+<li><p>Linux是以文件的形式管理我们的设备，因此Linux系统，一切皆文件</p>
+</li>
+<li><p>Linux的各个文件目录下存放什么内容，大家必须要有一个认识</p>
+</li>
+<li><p>学习后，你的脑海中应该有一棵Linux目录树</p>
+</li>
+</ul>
+<h2 id="Linux实操篇——远程登陆Linux系统"><a href="#Linux实操篇——远程登陆Linux系统" class="headerlink" title="Linux实操篇——远程登陆Linux系统"></a>Linux实操篇——远程登陆Linux系统</h2><ul>
+<li><p>为什么需要远程登陆Linux</p>
+<ul>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_57.png"></p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_58.png"></p>
+</li>
+</ul>
+</li>
+<li><p>这里因为Xshell并不支持mac用户，这里mac用户选择使用Royal TSX代替使用，相关配置方法如下</p>
+<ul>
+<li>下载网址<ul>
+<li><a target="_blank" rel="noopener" href="https://www.royalapps.com/ts/mac/features">https://www.royalapps.com/ts/mac/features</a></li>
+</ul>
+</li>
+<li>安装相关需要插件<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_62.png"></li>
+</ul>
+</li>
+<li>创建一个Document<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_63.png"></li>
+<li>注意记得保存—Command+s</li>
+</ul>
+</li>
+<li>建立连接<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_69.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_70.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_72.png"></li>
+<li>注意保存</li>
+</ul>
+</li>
+<li>最后启动连接即可以登陆到远程服务器</li>
+<li>远程上传和下载<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_74.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_76.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_78.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210816_79.png"></li>
+<li>可以直接拖动文件完成下载和上传，也可以选择一个文件右击upload/download</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux实操——vi-vim使用"><a href="#Linux实操——vi-vim使用" class="headerlink" title="Linux实操——vi/vim使用"></a>Linux实操——vi/vim使用</h2><ul>
+<li>详情可见Java中vi/vim操作笔记</li>
+</ul>
+<h2 id="Linux——开机、重启、用户登陆注销"><a href="#Linux——开机、重启、用户登陆注销" class="headerlink" title="Linux——开机、重启、用户登陆注销"></a>Linux——开机、重启、用户登陆注销</h2><h3 id="关机-amp-重启命令"><a href="#关机-amp-重启命令" class="headerlink" title="关机&amp;重启命令"></a>关机&amp;重启命令</h3><ul>
+<li>基本介绍<ul>
+<li>shutdown<ul>
+<li><code>shutdown -h now</code> :表示立即关机</li>
+<li><code>shutdown -h 1</code> : 表示一分钟后关机</li>
+<li><code>shutdown -r now</code> :表示立即重启</li>
+</ul>
+</li>
+<li><code>halt</code><ul>
+<li>直接使用 效果等同于关机</li>
+</ul>
+</li>
+<li><code>reboot</code><ul>
+<li>直接使用，重启系统</li>
+</ul>
+</li>
+<li><code>sync</code><ul>
+<li>把内存数据同步到磁盘</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>注意细节<ul>
+<li>当我们关机或者重启时，都应该先执行以下sync指令，把内存的数据写入磁盘，防止数据丢失</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户登陆与注销"><a href="#用户登陆与注销" class="headerlink" title="用户登陆与注销"></a>用户登陆与注销</h3><ul>
+<li><p>基本介绍</p>
+<ul>
+<li><p>登录时尽量少使用root账号登陆，因为他是系统管理员，最大的权限，避免操作失误，可以利用普通用户登陆，登陆后再用”<code>su - 用户名</code>“命令来切换成系统管理员身份</p>
+</li>
+<li><p>在提示符下，输入<code>logout</code>即可注销用户</p>
+</li>
+</ul>
+</li>
+<li><p>使用细节</p>
+<ul>
+<li>在logout注销指令在图形运行级别无效，在运行级别3下有效</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+<h2 id="Linux——用户管理"><a href="#Linux——用户管理" class="headerlink" title="Linux——用户管理"></a>Linux——用户管理</h2><ul>
+<li>基本介绍<ul>
+<li>Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统</li>
+</ul>
+<ul>
+<li>Linux用户至少需要属于一个组</li>
+</ul>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210817_80.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><ul>
+<li><p><strong>基本语法</strong></p>
+<ul>
+<li><code>useradd 【选项】用户名</code></li>
+</ul>
+</li>
+<li><p><strong>细节说明</strong></p>
+<ul>
+<li>当创建用户成功后，会自动的创建和用户同名的家目录</li>
+<li>也可以通过“<code>useradd -d</code> ”指定目录，新的用户名，给新建用户指定家目录</li>
+</ul>
+</li>
+<li><p>给用户指定或者修改密码</p>
+<ul>
+<li><strong>基本语法</strong><ul>
+<li><code>passwd 用户名</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><ul>
+<li><p>基本语法</p>
+<ul>
+<li><code>userdel 用户名</code> ：删除用户，保留其家目录</li>
+<li><code>userdel -r 用户名</code>  ：删除用户，同时删除其家目录</li>
+</ul>
+</li>
+<li><p>注意：一般在实际开发中，会保留用户的家目录</p>
+</li>
+</ul>
+<h3 id="查询用户信息指令"><a href="#查询用户信息指令" class="headerlink" title="查询用户信息指令"></a>查询用户信息指令</h3><ul>
+<li>基本语法<ul>
+<li><code>id 用户名</code></li>
+</ul>
+</li>
+<li>细节说明<ul>
+<li>当用户不存在时，返回无此用户</li>
+</ul>
+</li>
+</ul>
+<h3 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h3><ul>
+<li>介绍<ul>
+<li>在操作Linux中，如果当前的用户权限不够，可以通过su -指令，切换到高权限用户，比如root</li>
+</ul>
+</li>
+<li>基本语法<ul>
+<li><code>su - 切换用户名</code></li>
+</ul>
+</li>
+<li>细节说明<ul>
+<li>从权限高的用户切换到权限低的用户，不需要输入密码，反之需要</li>
+<li>从需要返回到原来用户时，使用<code>exit</code>指令</li>
+</ul>
+</li>
+</ul>
+<h3 id="查看当前用户-登陆用户"><a href="#查看当前用户-登陆用户" class="headerlink" title="查看当前用户/登陆用户"></a>查看当前用户/登陆用户</h3><ul>
+<li><p>基本语法</p>
+<p><code>whoami</code> /<code>who am I</code></p>
+</li>
+</ul>
+<h3 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h3><ul>
+<li><p>介绍</p>
+<ul>
+<li>类似于角色，系统可以对有共性的多个用户进行统一的管理</li>
+</ul>
+</li>
+<li><p>新增组</p>
+<ul>
+<li>指令</li>
+</ul>
+</li>
+<li><p><code>groupadd 组名</code></p>
+</li>
+<li><p>删除组</p>
+<ul>
+<li>指令（基本语法）</li>
+<li><code>groupdel 组名</code></li>
+</ul>
+</li>
+<li><p>增加用户时直接加上组</p>
+<ul>
+<li>指令（基本语法）</li>
+<li><code>useradd -g 用户组 用户名</code></li>
+</ul>
+</li>
+<li><p>修改用户的组</p>
+<ul>
+<li>指令</li>
+<li><code>usermod -g 用户组 用户名</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="用户和组的相关文件"><a href="#用户和组的相关文件" class="headerlink" title="用户和组的相关文件"></a>用户和组的相关文件</h3><ul>
+<li>/etc/passwd 文件<ul>
+<li>用户（user）的配置文件，记录用户的各种信息</li>
+<li>每行的含义： 用户名：口令：用户标识号：组标识号：注释性描述：主目录：登陆Shell</li>
+</ul>
+</li>
+<li>/etc/shadow 文件<ul>
+<li>口令的配置文件</li>
+<li>每行的含义： 登陆名：加密口令：最后一次修改时间：最小时间间隔：最大时间间隔：警告时间：不活动时间：失效时间：标志</li>
+</ul>
+</li>
+<li>/etc/group 文件<ul>
+<li>组（group）的配置文件，记录Linux包含的组的信息</li>
+<li>每行含义：组名：口令：组标识号：组内用户列表</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux-实用指令"><a href="#Linux-实用指令" class="headerlink" title="Linux 实用指令"></a>Linux 实用指令</h2><h3 id="指定运行级别"><a href="#指定运行级别" class="headerlink" title="指定运行级别"></a>指定运行级别</h3><ul>
+<li>基本介绍<ul>
+<li>0: 关机</li>
+<li>1: 单用户（找回丢失密码）</li>
+<li>2: 多用户状态没有网络服务</li>
+<li>3: 多用户状态有网络服务</li>
+<li>4: 系统未使用保留给用户</li>
+<li>5: 图形界面</li>
+<li>6: 系统重启</li>
+</ul>
+</li>
+<li>常用运行级别是3和5，要修改默认的运行级别可改文件<ul>
+<li>/etc/inittab的id：5：initdefault:这一行中的数字</li>
+</ul>
+</li>
+<li>命令：init [012356]</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210819_81.png"></li>
+</ul>
+<ul>
+<li>面试题<ul>
+<li>如何找回丢失的root密码</li>
+<li>思路：进入到单用户模式，然后修改root密码，因为进入单用户模式，root不需要密码就可以登陆</li>
+<li>总结：开机 ——〉在引导时输入 回车键 ——〉看到界面输入e——〉看到一个新的界面，选中第二行（编辑内核）在输入e——〉在这行最后输入 1——〉再输入回车键 ——〉再次输入b，这时候就会进入单用户模式</li>
+<li>这时，我们就进入到单用户模式，使用passwd指令来修改root密码</li>
+</ul>
+</li>
+</ul>
+<h3 id="帮助指令"><a href="#帮助指令" class="headerlink" title="帮助指令"></a>帮助指令</h3><ul>
+<li>介绍<ul>
+<li>当我们对某个指令不熟悉的时候，我们可以只用Linux的帮助指令来了解这个指令的使用方法</li>
+</ul>
+</li>
+<li>man 获取帮助信息<ul>
+<li>基本语法</li>
+<li><code>man [命令或配置文件]</code>      功能描述：获取帮助信息</li>
+</ul>
+</li>
+<li>help指令<ul>
+<li>基本语法</li>
+<li><code>help 命令</code>     功能描述：获得shell内置命令的帮助信息</li>
+</ul>
+</li>
+<li>当一个指令不熟悉的时候，还可以直接百度搜索</li>
+</ul>
+<h3 id="文件目录类指令"><a href="#文件目录类指令" class="headerlink" title="文件目录类指令"></a>文件目录类指令</h3><ul>
+<li><p>pwd指令</p>
+<ul>
+<li>基本语法<ul>
+<li><code>pwd</code>            功能描述：显示当前工作目录的绝对路径</li>
+</ul>
+</li>
+<li>应用实例<ul>
+<li>显示当前工作目录的绝对路径</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ls指令</p>
+<ul>
+<li>基本语法<ul>
+<li><code>ls</code>                  [选项]       [目录或是文件]</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li><code>-a</code>   显示当前目录所有的文件和目录，包括隐藏的</li>
+<li><code>-l</code>   以列表的方式显示信息</li>
+</ul>
+</li>
+<li>应用实例<ul>
+<li>案例：查看当前目录的所有内容信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>cd指令</p>
+<ul>
+<li>基本语法<ul>
+<li><code>cd</code>     [参数]       （功能描述：切换到指定目录）</li>
+</ul>
+</li>
+<li>常用参数<ul>
+<li><span style="color:red;background:;font-size:文字大小;font-family:字体;">绝对路径和相对路径</span></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210822_83.png"></li>
+<li>cd ～或者cd ： 回到自己的家目录</li>
+<li>cd .. 回到当前目录的上一级目录</li>
+</ul>
+</li>
+<li>应用案例<ul>
+<li>使用绝对路径切换到root目录</li>
+<li>使用相对路径到/root目录</li>
+<li>表示回到当前目录的上一级目录</li>
+<li>回到家目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>mkdir</p>
+<ul>
+<li>mkdir指令用于创建目录</li>
+<li>基本语法<ul>
+<li><code>mkdir   [选项]</code>         要创建的目录</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li><code>-p</code>      创建多级目录</li>
+</ul>
+</li>
+<li>应用实例<ul>
+<li>创建一个目录/home/dog</li>
+<li>创建多级目录/home/animal/tiger （<span style="color:red;background:;font-size:文字大小;font-family:字体;">注意加 -p 参数 </span>）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>rmdir</p>
+<ul>
+<li>rmdir指令删除空目录</li>
+<li>基本语法<ul>
+<li><code>rmdir</code>  [选项]    要删除的空目录</li>
+</ul>
+</li>
+<li>使用细节<ul>
+<li>rmdir删除的是空目录，如果目录下有内容无法删除的</li>
+<li>提示：如果需要删除非空目录，需要使用 <code>rm -rf</code> 要删除的目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>touch </p>
+<ul>
+<li>touch指令创建空文件</li>
+<li>基本语法<ul>
+<li><code>touch</code>   文件名称</li>
+<li>也可以一次性创建多个文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>cp (重要)</p>
+<ul>
+<li>cp指令拷贝文件到指定目录</li>
+<li>基本语法<ul>
+<li><code>cp</code>  [选项]  source dest  （source：要拷贝的文件资源；dest：粘贴目标资源）</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li><code>-r</code>  递归复制整个文件夹</li>
+</ul>
+</li>
+<li>使用细节<ul>
+<li>强制覆盖不提示方法：\cp</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>rm</p>
+<ul>
+<li>rm指令移除文件或目录</li>
+<li>基本语法<ul>
+<li><code>rm</code>  [选项] 要删除的文件或目录</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li><code>-r </code> : 递归删除整个文件夹<ul>
+<li>例 <code>rm -rf bbb/</code>(删除bbb文件夹)</li>
+</ul>
+</li>
+<li><code>-f</code> : 强制删除不提示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>mv</p>
+<ul>
+<li>mv移动文件与目录或重命名</li>
+<li>基本语法<ul>
+<li><code>mv oldNameFile newNameFile</code>   (功能描述：重命名)</li>
+<li><code>mv /temp/movefile /targetFloder</code>   (功能描述：移动文件)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>cat</p>
+<ul>
+<li>cat查看文件内容 （以只读的方式）</li>
+<li>基本语法<ul>
+<li><code>cat</code>  [选项]  要查看的文件</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li><code>-n</code> : 显示行号</li>
+</ul>
+</li>
+<li>使用细节<ul>
+<li>cat只能浏览文件，而不能修改文件，为了浏览方便，一般会带上 管道命令 ｜more</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>more</p>
+<ul>
+<li><p>more指令是一个基于VI编辑器大的文本过滤器，它以全屏幕的方式按页显示文本文件的内容。more指令中内置了若干快捷键，详见操作说明</p>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">空格键（space）</td>
+<td align="center">代表向下翻页</td>
+</tr>
+<tr>
+<td align="center">Enter</td>
+<td align="center">代表向下翻一行</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">代表立刻离开more，不再显示该文件内容</td>
+</tr>
+<tr>
+<td align="center">Ctrl+F</td>
+<td align="center">向下滚动一屏</td>
+</tr>
+<tr>
+<td align="center">Ctrl+B</td>
+<td align="center">返回上一屏</td>
+</tr>
+<tr>
+<td align="center">=</td>
+<td align="center">输出当前行号</td>
+</tr>
+<tr>
+<td align="center">：f</td>
+<td align="center">输出文件名和当前行的行号</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>less</p>
+<ul>
+<li><p>less指令用来分屏查看文件内容，他的功能和more指令相似，但是比more指令更加强大，支持各种显示终端，less指令在显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载内容，<span style="color:red;background:;font-size:文字大小;font-family:字体;">对于显示大型文件具有较高的效率</span></p>
+</li>
+<li><p>基本语法</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">空格键</td>
+<td align="center">向下翻动一页</td>
+</tr>
+<tr>
+<td align="center">【pagedown】</td>
+<td align="center">向下翻动一页</td>
+</tr>
+<tr>
+<td align="center">【pageup】</td>
+<td align="center">向上翻动一页</td>
+</tr>
+<tr>
+<td align="center">/字串</td>
+<td align="center">向下搜寻【字串】的功能： n ：向下查找 N：向上查找</td>
+</tr>
+<tr>
+<td align="center">？字串</td>
+<td align="center">向上搜寻【字串】的功能： n ：向上查找 N：向下查找</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">离开less这个程序</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+<ul>
+<li><code>&gt; 指令 和 &gt;&gt; 指令</code><ul>
+<li><code>&gt; 输出重定向</code>    会覆盖原来文件内容</li>
+<li><code>&gt;&gt; 追加 </code>   不会覆盖原来文件内容，追加内容到末尾</li>
+<li>基本语法<ul>
+<li><code>ls -l &gt; 文件</code>——（功能描述：列表的内容写入文件a.txt（覆盖））</li>
+<li><code>ls -al &gt;&gt; 文件</code>——（功能描述：列表的内容追加到文件aa.txt的末尾）</li>
+<li><code>cat 文件1 &gt; 文件2 </code>——（功能描述：将文件1的内容覆盖到文件2）</li>
+<li><code>echo “内容”&gt;&gt; 文件</code>——（功能描述）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>echo 指令<ul>
+<li>echo输出内容到控制台</li>
+<li>基本语法<ul>
+<li><code>echo [选项] [输出内容]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>head <ul>
+<li>head指令用于显示文件的开头部分内容，默认情况下head指令显示文件的前10行内容</li>
+<li>基本语法<ul>
+<li><code>head 文件</code>      （功能描述：查看文件头10行内容）</li>
+<li><code>head -n 5 文件</code>         （功能描述：查看文件头5行内容，5可以是任意行数）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>tail<ul>
+<li>tail指令用于输出文件中尾部的内容，默认情况下tail指令显示文件的后10行</li>
+<li>基本语法<ul>
+<li><code>tail 文件</code>    （功能描述：查看文件后10行）</li>
+<li><code>tail -n 5 文件 </code>     （功能描述：查看文件后5行，5可以是任意行数）</li>
+<li><code>tail -f 文件</code>      （功能描述：实时追踪该文档所有更新）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>ln指令<ul>
+<li>软连接也叫符号链接，类似于windows里的快捷方式，主要存放了链接其他文件的路径</li>
+<li>基本语法<ul>
+<li><code>ln -s [原文件或目录] [软链接名] </code>      （功能描述：给原文件创建一个软链接）</li>
+</ul>
+</li>
+<li>细节说明 ：当我们使用pwd指令查看目录时，仍然看到的是软链接所在的目录</li>
+<li>删除：使用<code>rm -rf [软链接]</code></li>
+</ul>
+</li>
+<li>history<ul>
+<li>查看已经执行过的历史命令，也可以执行历史命令</li>
+<li>基本语法<ul>
+<li><code>history </code>      (功能描述：查看已经执行过的历史命令)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="时间日期类"><a href="#时间日期类" class="headerlink" title="时间日期类"></a>时间日期类</h3><ul>
+<li>date指令-显示当前日期<ul>
+<li>基本语法<ul>
+<li><code>date</code>    (功能描述：显示当前时间)</li>
+<li><code>date +%Y</code>     (功能描述：显示当前年份)</li>
+<li><code>date +%m</code>     (功能描述：显示当前月份)</li>
+<li><code>date +%d</code>     (功能描述：显示当前哪一天)</li>
+<li><code>date &quot;+%Y-%m-%d %H:%M:%S&quot;</code>    (功能描述：显示年月日时分秒)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>date指令-设置日期<ul>
+<li>基本语法<ul>
+<li><code>date -s 字符串时间</code>   </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cal指令<ul>
+<li>查看日历指令</li>
+<li>基本语法<ul>
+<li><code>cal [选项] </code>     （功能描述：不加选项，显示本月日历）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="搜索查找类"><a href="#搜索查找类" class="headerlink" title="搜索查找类"></a>搜索查找类</h3><ul>
+<li><p>find</p>
+<ul>
+<li><p>find指令将 从指定目录下递归的遍历其各个子目录，将满足条件的文件或者目录显示在终端</p>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>find [搜索范围] [选项]</code></li>
+</ul>
+</li>
+<li><p>选项说明</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-name&lt;查询方式&gt;</td>
+<td align="center">按照指定的文件名查找模式查找文件</td>
+</tr>
+<tr>
+<td align="center">-user&lt;用户名&gt;</td>
+<td align="center">查找属于指定用户名所有文件</td>
+</tr>
+<tr>
+<td align="center">-size&lt;文件大小&gt;</td>
+<td align="center">按照指定的文件大小查找文件</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>locate指令</p>
+<ul>
+<li>locate指令可以快速定位文件路径，locate指令利用事先建立的系统中所有 文件名称及路径的locate数据库实现快速定位给定的文件，Locate指令无需遍历整个文件系统，查询速度较快，为了保证查询结果的准确度，管理员必须定期更新locate时刻</li>
+<li>基本语法<ul>
+<li><code>locate 搜索文件</code></li>
+</ul>
+</li>
+<li>特别说明<ul>
+<li>由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>grep指令和 管道符号 ｜ </p>
+<ul>
+<li><p>grep过滤查找，管道符号“｜”，表示将前一个命令的处理结果输出传递给后面的命令处理</p>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>grep [选项] 查找内容 源文件</code></li>
+</ul>
+</li>
+<li><p>常用选项</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-n</td>
+<td align="center">显示匹配行及行号</td>
+</tr>
+<tr>
+<td align="center">-i</td>
+<td align="center">忽略字母大小写</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="压缩和解压类"><a href="#压缩和解压类" class="headerlink" title="压缩和解压类"></a>压缩和解压类</h3><ul>
+<li>gzip/gunzip指令<ul>
+<li>gzip用于压缩文件，gunzip用于解压</li>
+<li>基本语法<ul>
+<li><code>gzip 文件</code>    (功能描述：压缩文件，只能将文件压缩为*.gz文件)</li>
+<li><code>gunzip 文件.gz</code>   (功能描述：解压缩文件命令)</li>
+</ul>
+</li>
+<li>细节说明：当我们使用gzip对文件进行压缩后，不会保留原文件</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>zip/unzip指令<ul>
+<li>zip用于压缩文件，unzip用于解压，这个在项目打包发布中很有用</li>
+<li>基本语法<ul>
+<li><code>zip [选项] XXX.zip</code>    将要压缩的内容 （功能描述：压缩文件和目录的命令）</li>
+<li><code>unzip [选项] XXX.zip</code>    （功能描述：解压缩文件）</li>
+</ul>
+</li>
+<li>zip常用选项<ul>
+<li><code>-r</code>: 递归压缩，即压缩目录</li>
+</ul>
+</li>
+<li>unzip常用选项<ul>
+<li><code>-d&lt;目录&gt;</code>:指定解压后文件的存放目录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>tar指令</p>
+<ul>
+<li><p>tar指令是打包指令，最后打包后的文件是.tar.gz的文件</p>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>tar [选项] XXX.zip 打包的内容</code>    （功能描述：打包目录，压缩后的文件格式.tar.gz）</li>
+</ul>
+</li>
+<li><p>选项说明：</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-c</td>
+<td align="center">产生.tar打包文件</td>
+</tr>
+<tr>
+<td align="center">-v</td>
+<td align="center">显示详细信息</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">指定压缩后的文件名</td>
+</tr>
+<tr>
+<td align="center">-z</td>
+<td align="center">打包同时压缩</td>
+</tr>
+<tr>
+<td align="center">-x</td>
+<td align="center">解包.tar文件</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>一般组合</p>
+<ul>
+<li>-zcvf  打包 </li>
+<li>-zxvf  解包</li>
+</ul>
+</li>
+<li><p>实例</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210901_128.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210901_129.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210901_130.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210901_131.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="组管理-amp-权限管理"><a href="#组管理-amp-权限管理" class="headerlink" title="组管理&amp;权限管理"></a>组管理&amp;权限管理</h2><h3 id="Linux组的基本介绍"><a href="#Linux组的基本介绍" class="headerlink" title="Linux组的基本介绍"></a>Linux组的基本介绍</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210901_133.png"></p>
+<h3 id="文件-目录所有者"><a href="#文件-目录所有者" class="headerlink" title="文件/目录所有者"></a>文件/目录所有者</h3><ul>
+<li>一般为文件的创建者，谁创建了该文件，就自然的成为该文件的所有者</li>
+<li>查看文件的所有者<ul>
+<li>指令：<code>ls -ahl</code></li>
+<li>应用实例：创建一个组police，再创建一个用户tom，把tom放进police，然后使用tom创建一个文件，看看情况如何</li>
+</ul>
+</li>
+<li>修改文件的所有者<ul>
+<li>指令：<code>chown 用户名 文件名</code></li>
+<li>应用实例：使用root创建一个文件apple.txt，然后将其所有者改成tom</li>
+</ul>
+</li>
+</ul>
+<h3 id="组的创建"><a href="#组的创建" class="headerlink" title="组的创建"></a>组的创建</h3><ul>
+<li>基本指令<ul>
+<li><code>groupadd 组名</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="文件-目录所在组"><a href="#文件-目录所在组" class="headerlink" title="文件/目录所在组"></a>文件/目录所在组</h3><ul>
+<li>当某个用户创建了一个文件后，默认这个文件的所在组就是该用户 的组</li>
+<li>查看文件/目录所在组<ul>
+<li>基本指令：<code>ls -ahl</code></li>
+</ul>
+</li>
+<li>修改文件所在组<ul>
+<li>指令：<code>chgrp 组名 文件名</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210901_134.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210901_135.png"></p>
+<h2 id="权限的基本介绍"><a href="#权限的基本介绍" class="headerlink" title="权限的基本介绍"></a>权限的基本介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210903_137.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210903_139.png"></p>
+<h3 id="rwx权限详解"><a href="#rwx权限详解" class="headerlink" title="rwx权限详解"></a>rwx权限详解</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210903_138.png"></p>
+<h3 id="修改权限-chmod"><a href="#修改权限-chmod" class="headerlink" title="修改权限-chmod"></a>修改权限-chmod</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210903_140.png"></p>
+<ul>
+<li><p>第二种方式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210903_142.png"></p>
+</li>
+</ul>
+<h3 id="修改文件所有者-chown"><a href="#修改文件所有者-chown" class="headerlink" title="修改文件所有者-chown"></a>修改文件所有者-chown</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210903_143.png"></p>
+<h3 id="修改文件所在组-chgrp"><a href="#修改文件所在组-chgrp" class="headerlink" title="修改文件所在组-chgrp"></a>修改文件所在组-chgrp</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210903_144.png"></p>
+<h2 id="定时任务调度"><a href="#定时任务调度" class="headerlink" title="定时任务调度"></a>定时任务调度</h2><h3 id="crond任务调度"><a href="#crond任务调度" class="headerlink" title="crond任务调度"></a>crond任务调度</h3><ul>
+<li>crontab进行定时任务的设置</li>
+<li>概述<ul>
+<li>任务调度：是指系统在某个时间执行的特定的命令或程序</li>
+<li>任务调度分类：<ul>
+<li>1.系统工作：有些重要的工作必须周而复始的执行，如病毒扫描等</li>
+<li>2.个别用户工作：个别用户可能希望执行某些程序，比如对mysql数据库的备份</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本选项<ul>
+<li>crontab [选项]</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li>-e  编辑crontab定时任务</li>
+<li>-l   查询crontab任务</li>
+<li>-r   删除当前用户所有crontab任务</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_1.png"></p>
+<ul>
+<li>参数细节说明</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_2.png"></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_3.png"></p>
+<ul>
+<li><p>相关指令</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_4.png"></p>
+</li>
+</ul>
+<h2 id="Linux磁盘分区-挂载"><a href="#Linux磁盘分区-挂载" class="headerlink" title="Linux磁盘分区/挂载"></a>Linux磁盘分区/挂载</h2><h3 id="分区的基础知识"><a href="#分区的基础知识" class="headerlink" title="分区的基础知识"></a>分区的基础知识</h3><ul>
+<li>分区的方式<ul>
+<li>mbr分区<ul>
+<li>最多支持四个主分区</li>
+<li>系统只能安装在主分区</li>
+<li>扩展分区要占一个主分区</li>
+<li>MBR最大只支持2TB，但拥有最好的兼容性</li>
+</ul>
+</li>
+<li>gtp分区<ul>
+<li>支持无限多个主分区（单操作系统可能限制，比如windows下最多128个分区）</li>
+<li>最大支持18EB的大容量（1EB=1024PB，1PB=1024TB）</li>
+<li>Windows7  64 位之后支持gtp</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="分区基本介绍"><a href="#分区基本介绍" class="headerlink" title="分区基本介绍"></a>分区基本介绍</h3><ul>
+<li>windows下磁盘分区</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_5.png"></li>
+<li>Linux分区</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_6.png"></li>
+</ul>
+<h3 id="硬盘说明"><a href="#硬盘说明" class="headerlink" title="硬盘说明"></a>硬盘说明</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_7.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_8.png"></p>
+<ul>
+<li><p>虚拟机增加硬盘操作</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_9.png"></li>
+</ul>
+</li>
+<li><p>卸载</p>
+<ul>
+<li>umount     /dev/sdb1</li>
+</ul>
+</li>
+</ul>
+<h3 id="磁盘情况查询"><a href="#磁盘情况查询" class="headerlink" title="磁盘情况查询"></a>磁盘情况查询</h3><ul>
+<li><p>查询系统整体磁盘使用情况</p>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>df -h</code></li>
+</ul>
+</li>
+<li><p>查询指定目录的磁盘占用情况</p>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>du -h /目录</code></li>
+<li>查询指定目录磁盘占用情况，默认为当前目录<ul>
+<li>-s  指定目录占用大小汇总</li>
+<li>-h  带计量单位</li>
+<li>-a  含文件</li>
+<li>–max-depth=1   子目录深度</li>
+<li>-c   列出明细的同时，增加汇总值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="磁盘情况-工作实用指令"><a href="#磁盘情况-工作实用指令" class="headerlink" title="磁盘情况-工作实用指令"></a>磁盘情况-工作实用指令</h2><ul>
+<li>统计/home文件夹下文件的个数<ul>
+<li><code>ls -l /home | grep &quot;^-&quot; | wc -l</code></li>
+</ul>
+</li>
+<li>统计/home文件夹下目录的个数<ul>
+<li><code>ls -l /home | grep &quot;^d&quot; | wc -l</code></li>
+</ul>
+</li>
+<li>统计/home文件夹下文件的个数，包括子文件夹里的<ul>
+<li><code>ls -lR /home | grep &quot;^-&quot; | wc -l</code></li>
+</ul>
+</li>
+<li>统计文件夹下目录的个数，包括子文件夹里的<ul>
+<li><code>ls -lR /home | grep &quot;^d&quot; | wc -l</code></li>
+</ul>
+</li>
+<li>以树状显示目录结构<ul>
+<li><code>yum install tree</code></li>
+<li><code>tree</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux网络配置"><a href="#Linux网络配置" class="headerlink" title="Linux网络配置"></a>Linux网络配置</h2><h3 id="Linux网络配置原理图（含虚拟机）"><a href="#Linux网络配置原理图（含虚拟机）" class="headerlink" title="Linux网络配置原理图（含虚拟机）"></a>Linux网络配置原理图（含虚拟机）</h3><ul>
+<li>目前我们的网络配置为NAT模式</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210904_12.png"></li>
+</ul>
+<h3 id="查看网络ip和网关"><a href="#查看网络ip和网关" class="headerlink" title="查看网络ip和网关"></a>查看网络ip和网关</h3><ul>
+<li>查看虚拟网络编辑器</li>
+</ul>
+<h3 id="Linux网络环境配置"><a href="#Linux网络环境配置" class="headerlink" title="Linux网络环境配置"></a>Linux网络环境配置</h3><ul>
+<li><p>第一种方法</p>
+<ul>
+<li>说明：登陆后，通过界面的来设置自动获取ip</li>
+<li>特点：linux启动后会自动的获取ip，缺点是每次自动获取的ip地址不一样</li>
+</ul>
+</li>
+<li><p>第二种方法</p>
+<ul>
+<li>说明：直接修改配置文件来指定ip，并可以来接到外网（推荐），编辑vi /etc/sysconfig/network-scripts/ifcfg-eth0</li>
+<li>要求：将ip地址配置的静态的，ip地址为192.168.194.130</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210905_13.png"></li>
+</ul>
+</li>
+<li><p>文件说明</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210905_14.png"></p>
+</li>
+</ul>
+<h2 id="Linux进程管理（重点）"><a href="#Linux进程管理（重点）" class="headerlink" title="Linux进程管理（重点）"></a>Linux进程管理（重点）</h2><ul>
+<li>基本介绍</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210905_15.png"></li>
+</ul>
+<h3 id="显示系统执行的进程"><a href="#显示系统执行的进程" class="headerlink" title="显示系统执行的进程"></a>显示系统执行的进程</h3><ul>
+<li><p>基本介绍</p>
+</li>
+<li><p>ps命令是用来查看目前系统中，有哪些正在执行。以及他们执行的状况，可以不加任何参数</p>
+</li>
+<li><p>ps显示的信息选项</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">字段</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PID</td>
+<td align="center">进程识别号</td>
+</tr>
+<tr>
+<td align="center">TTY</td>
+<td align="center">终端机号</td>
+</tr>
+<tr>
+<td align="center">TIME</td>
+<td align="center">此进程所消CPU时间</td>
+</tr>
+<tr>
+<td align="center">CMD</td>
+<td align="center">正在执行的命令或进程名</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>语法说明</p>
+<ul>
+<li><code>ps -a</code>: 显示当前终端所有进程信息</li>
+<li><code>ps -u</code>: 以用户的格式显示进程信息</li>
+<li><code>ps -x</code>: 显示后台进程运行的参数</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_4.png"></p>
+<ul>
+<li><p>指令详解</p>
+<img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_6.png"/></li>
+<li><p>应用实例</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_7.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_8.png"></p>
+<h3 id="终止进程kill和killall"><a href="#终止进程kill和killall" class="headerlink" title="终止进程kill和killall"></a>终止进程kill和killall</h3><ul>
+<li>介绍</li>
+</ul>
+<p>若是某个进程执行一半需要停止时，或是已消耗了很大的系统资源时，此时可以考虑停止该进程，使用kill命令来完成此项任务</p>
+<ul>
+<li>基本语法<ul>
+<li><code>kill [选项] 进程号</code>：(功能描述：通过进程号杀死进程)</li>
+<li><code>killall 进程名称</code>：（功能描述：通过进程名杀死进程，也支持通配符，这在系统因为负载过大而变得很慢时很有用）</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li>-9:表示强迫进程立即停止</li>
+</ul>
+</li>
+</ul>
+<h3 id="查看进程树pstree"><a href="#查看进程树pstree" class="headerlink" title="查看进程树pstree"></a>查看进程树pstree</h3><ul>
+<li>基本语法<ul>
+<li>pstree [选项]，可以更加直观的来看进程信息</li>
+</ul>
+</li>
+<li>常用选项<ul>
+<li>-p：显示进程的PID</li>
+<li>-u：显示进程的所属用户</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux服务（service）管理"><a href="#Linux服务（service）管理" class="headerlink" title="Linux服务（service）管理"></a>Linux服务（service）管理</h2><h3 id="服务（service）管理"><a href="#服务（service）管理" class="headerlink" title="服务（service）管理"></a>服务（service）管理</h3><ul>
+<li>介绍</li>
+</ul>
+<p>服务（service）本质就是进程，但是是运行在后台的，通常都会监听某个端口，等待其他程序的请求，比如（mysql、sshd 防火墙等），因此我们又称为守护进程，是linux中非常重要的知识点</p>
+<ul>
+<li>原理图</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_10.png"></p>
+<ul>
+<li>service管理指令<ul>
+<li><code>service 服务名 start｜stop｜restart｜reload｜status</code></li>
+<li><code>systemctl</code>（cenos7.0以后使用这个）</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_9.png"></p>
+<h3 id="查看服务名"><a href="#查看服务名" class="headerlink" title="查看服务名"></a>查看服务名</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_11.png"></p>
+<ul>
+<li>列出系统有哪些服务</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_12.png"></p>
+<h3 id="服务的运行级别"><a href="#服务的运行级别" class="headerlink" title="服务的运行级别"></a>服务的运行级别</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_13.png"></p>
+<h3 id="chkconfig指令"><a href="#chkconfig指令" class="headerlink" title="chkconfig指令"></a>chkconfig指令</h3><p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_15.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_16.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210908_17.png"></p>
+<h3 id="动态监控进程"><a href="#动态监控进程" class="headerlink" title="动态监控进程"></a>动态监控进程</h3><ul>
+<li><p>介绍</p>
+<ul>
+<li>top与ps命令很相似，他们都用来显示正在执行的进程。Top与ps最大的不同之处，在于top在执行一段时间可以更新正在运行的进程。</li>
+</ul>
+</li>
+<li><p>基本语法</p>
+<ul>
+<li><code>top [选项]</code></li>
+</ul>
+</li>
+<li><p>选项说明</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-d 秒数</td>
+<td align="center">指定top命令每隔几秒更新，默认是3秒在top命令的交互模式当中可以执行的命令</td>
+</tr>
+<tr>
+<td align="center">-i</td>
+<td align="center">使top不显示任何闲置或者僵死进程</td>
+</tr>
+<tr>
+<td align="center">-p</td>
+<td align="center">通过指定监控进程ID来仅仅监控某个进程的状态</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>交互指令说明</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">P</td>
+<td align="center">以CPU使用率排序，默认就是此项</td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center">以内存的使用率排序</td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td align="center">以PID排序</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">退出top</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210914_42.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210914_43.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210914_44.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210914_45.png"></p>
+<h3 id="监控网络状态"><a href="#监控网络状态" class="headerlink" title="监控网络状态"></a>监控网络状态</h3><ul>
+<li>查看系统网络情况netstat</li>
+<li>基本语法<ul>
+<li><code>netstat [选项]</code></li>
+</ul>
+</li>
+<li>选项说明<ul>
+<li>-an ：按一定顺序排列输出</li>
+<li>-p ：显示哪个进程在调用</li>
+</ul>
+</li>
+</ul>
+<h3 id="检测主机连接命令ping"><a href="#检测主机连接命令ping" class="headerlink" title="检测主机连接命令ping"></a>检测主机连接命令ping</h3><ul>
+<li>是一种网络检测检测工具，它主要是用检测远程教育主机是否工作正常，或是两部主机间的介质是否为断，网线是否脱落或网卡故障</li>
+</ul>
+<h2 id="RPM与YUM"><a href="#RPM与YUM" class="headerlink" title="RPM与YUM"></a>RPM与YUM</h2><h3 id="rpm包的管理"><a href="#rpm包的管理" class="headerlink" title="rpm包的管理"></a>rpm包的管理</h3><ul>
+<li>介绍<ul>
+<li>一种用于互联网下载包的打包及安装工具，它包含在某些Linux分发版中，它生成具有.RAM扩展名的文件，RPM是RedHat Package Manager （RedHat软件包管理工具）的缩写，类似windows的setup.exe,这一文件格式名称虽然打上了RedHat的标志，但是理念是通用的</li>
+<li>Linux的分发版本都采用（suse,redhat,centos等等），可以算是公认的行业标准了。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Rpm包的简单查询指令</p>
+<ul>
+<li>查询已安装的rpm列表：<code>rpm -qa|grep xx</code></li>
+</ul>
+</li>
+<li><p>Rpm包名基本格式</p>
+<ul>
+<li>一个rpm包名：firefox-68.10.0-1.el7.centos.x86_64.rpm</li>
+<li>名称：firefox</li>
+<li>版本号：68.10.0-1</li>
+<li>适用操作系统：el7.centos.x86_64</li>
+<li>表示centos7.x的64位系统</li>
+<li>如果是i686、i386表示32位系统，noarch表示通用</li>
+</ul>
+</li>
+<li><p>rpm包的其他查询指令</p>
+<ul>
+<li><code>rpm -qa</code>:查询所安装的所有rpm软件包</li>
+<li><code>rpm -qa | more</code></li>
+<li><code>rpm -qa | grep x[rpm -qa|grep firefox]</code></li>
+</ul>
+<ul>
+<li><code>rpm -ql 软件包名</code>:查询软件包中的文件</li>
+<li><code>rpm ql firefox</code></li>
+</ul>
+<ul>
+<li><code>rpm -qf 文件全路径名 </code> ：查询文件所属软件包</li>
+<li><code>rpm -qf /etc/passwd</code></li>
+<li><code>rpm -qf /root/install.log</code></li>
+</ul>
+<ul>
+<li><code>rpm -q 软件包名</code>：查询软件包是否安装 </li>
+<li><code>rpm -q firefox</code></li>
+</ul>
+<ul>
+<li><code>rpm -qi 软件包名</code>：查询软件包信息</li>
+<li><code>rpm -qi file</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>卸载rpm包</p>
+<ul>
+<li>基本语法</li>
+<li><code>rpm -e RPM包的名称</code></li>
+<li>细节讨论</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/img/snip_img/Linuximg/Snip20210914_48.png"></li>
+</ul>
+</li>
+<li><p>安装rpm包</p>
+<ul>
+<li>基本语法</li>
+<li><code>rpm -ivh RPM包全路径名称</code></li>
+<li>参数说明<ul>
+<li>i=install 安装</li>
+<li>v=verbose 提示 </li>
+<li>h=hash 进度条</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h3><ul>
+<li>介绍</li>
+<li>Yum是一个Shell前端软件包管理器，基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包</li>
+<li>yum的基本指令<ul>
+<li>查询yum服务器是否有需要安装的软件</li>
+<li><code>yum list|grep xx软件列表</code></li>
+<li>安装指定的yum包</li>
+<li><code>yum install xxx 下载安装</code></li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Benson</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://benson-q.github.io/2021/09/16/Linux/">https://benson-q.github.io/2021/09/16/Linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://benson-q.github.io" target="_blank">Benson</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-611115b87b6db859" async="async"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/10/JavaEE/Git&amp;GitHub/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/1.1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git&amp;GitHub</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81MzcxNC8zMDE4Nw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/P1/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Benson</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Benson-QAQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/BensonQAQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:79421362@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">继承，是幸福的延续！重载，是幸福的重生！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux"><span class="toc-number">1.</span> <span class="toc-text">Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E2%80%94%E5%85%A5%E9%97%A8"><span class="toc-number">1.1.</span> <span class="toc-text">Linux基础篇——入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VM%E5%92%8CLinux-Centos%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.1.</span> <span class="toc-text">VM和Linux-Centos安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">Linux文件系统目录结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%AE%9E%E6%93%8D%E7%AF%87%E2%80%94%E2%80%94%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86Linux%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">Linux实操篇——远程登陆Linux系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%AE%9E%E6%93%8D%E2%80%94%E2%80%94vi-vim%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">Linux实操——vi&#x2F;vim使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E2%80%94%E2%80%94%E5%BC%80%E6%9C%BA%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86%E6%B3%A8%E9%94%80"><span class="toc-number">1.4.</span> <span class="toc-text">Linux——开机、重启、用户登陆注销</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E6%9C%BA-amp-%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.1.</span> <span class="toc-text">关机&amp;重启命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86%E4%B8%8E%E6%B3%A8%E9%94%80"><span class="toc-number">1.4.2.</span> <span class="toc-text">用户登陆与注销</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E2%80%94%E2%80%94%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">Linux——用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="toc-number">1.5.1.</span> <span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="toc-number">1.5.2.</span> <span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">1.5.3.</span> <span class="toc-text">查询用户信息指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="toc-number">1.5.4.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7-%E7%99%BB%E9%99%86%E7%94%A8%E6%88%B7"><span class="toc-number">1.5.5.</span> <span class="toc-text">查看当前用户&#x2F;登陆用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">1.5.6.</span> <span class="toc-text">用户组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%9A%84%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span class="toc-number">1.5.7.</span> <span class="toc-text">用户和组的相关文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">1.6.</span> <span class="toc-text">Linux 实用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="toc-number">1.6.1.</span> <span class="toc-text">指定运行级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9%E6%8C%87%E4%BB%A4"><span class="toc-number">1.6.2.</span> <span class="toc-text">帮助指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%B1%BB%E6%8C%87%E4%BB%A4"><span class="toc-number">1.6.3.</span> <span class="toc-text">文件目录类指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="toc-number">1.6.4.</span> <span class="toc-text">时间日期类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%9F%A5%E6%89%BE%E7%B1%BB"><span class="toc-number">1.6.5.</span> <span class="toc-text">搜索查找类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%B1%BB"><span class="toc-number">1.6.6.</span> <span class="toc-text">压缩和解压类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E7%AE%A1%E7%90%86-amp-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">1.7.</span> <span class="toc-text">组管理&amp;权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.7.1.</span> <span class="toc-text">Linux组的基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95%E6%89%80%E6%9C%89%E8%80%85"><span class="toc-number">1.7.2.</span> <span class="toc-text">文件&#x2F;目录所有者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.7.3.</span> <span class="toc-text">组的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95%E6%89%80%E5%9C%A8%E7%BB%84"><span class="toc-number">1.7.4.</span> <span class="toc-text">文件&#x2F;目录所在组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.8.</span> <span class="toc-text">权限的基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rwx%E6%9D%83%E9%99%90%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.8.1.</span> <span class="toc-text">rwx权限详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90-chmod"><span class="toc-number">1.8.2.</span> <span class="toc-text">修改权限-chmod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E6%9C%89%E8%80%85-chown"><span class="toc-number">1.8.3.</span> <span class="toc-text">修改文件所有者-chown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E5%9C%A8%E7%BB%84-chgrp"><span class="toc-number">1.8.4.</span> <span class="toc-text">修改文件所在组-chgrp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6"><span class="toc-number">1.9.</span> <span class="toc-text">定时任务调度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#crond%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6"><span class="toc-number">1.9.1.</span> <span class="toc-text">crond任务调度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA-%E6%8C%82%E8%BD%BD"><span class="toc-number">1.10.</span> <span class="toc-text">Linux磁盘分区&#x2F;挂载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8C%BA%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.10.1.</span> <span class="toc-text">分区的基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8C%BA%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.10.2.</span> <span class="toc-text">分区基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E7%9B%98%E8%AF%B4%E6%98%8E"><span class="toc-number">1.10.3.</span> <span class="toc-text">硬盘说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E6%83%85%E5%86%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.10.4.</span> <span class="toc-text">磁盘情况查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E6%83%85%E5%86%B5-%E5%B7%A5%E4%BD%9C%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">1.11.</span> <span class="toc-text">磁盘情况-工作实用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.12.</span> <span class="toc-text">Linux网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86%E5%9B%BE%EF%BC%88%E5%90%AB%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%89"><span class="toc-number">1.12.1.</span> <span class="toc-text">Linux网络配置原理图（含虚拟机）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9Cip%E5%92%8C%E7%BD%91%E5%85%B3"><span class="toc-number">1.12.2.</span> <span class="toc-text">查看网络ip和网关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.12.3.</span> <span class="toc-text">Linux网络环境配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">1.13.</span> <span class="toc-text">Linux进程管理（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E7%B3%BB%E7%BB%9F%E6%89%A7%E8%A1%8C%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.13.1.</span> <span class="toc-text">显示系统执行的进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%88%E6%AD%A2%E8%BF%9B%E7%A8%8Bkill%E5%92%8Ckillall"><span class="toc-number">1.13.2.</span> <span class="toc-text">终止进程kill和killall</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E6%A0%91pstree"><span class="toc-number">1.13.3.</span> <span class="toc-text">查看进程树pstree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%9C%8D%E5%8A%A1%EF%BC%88service%EF%BC%89%E7%AE%A1%E7%90%86"><span class="toc-number">1.14.</span> <span class="toc-text">Linux服务（service）管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%EF%BC%88service%EF%BC%89%E7%AE%A1%E7%90%86"><span class="toc-number">1.14.1.</span> <span class="toc-text">服务（service）管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%90%8D"><span class="toc-number">1.14.2.</span> <span class="toc-text">查看服务名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="toc-number">1.14.3.</span> <span class="toc-text">服务的运行级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chkconfig%E6%8C%87%E4%BB%A4"><span class="toc-number">1.14.4.</span> <span class="toc-text">chkconfig指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%9B%91%E6%8E%A7%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.14.5.</span> <span class="toc-text">动态监控进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81"><span class="toc-number">1.14.6.</span> <span class="toc-text">监控网络状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5%E5%91%BD%E4%BB%A4ping"><span class="toc-number">1.14.7.</span> <span class="toc-text">检测主机连接命令ping</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPM%E4%B8%8EYUM"><span class="toc-number">1.15.</span> <span class="toc-text">RPM与YUM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E5%8C%85%E7%9A%84%E7%AE%A1%E7%90%86"><span class="toc-number">1.15.1.</span> <span class="toc-text">rpm包的管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yum"><span class="toc-number">1.15.2.</span> <span class="toc-text">yum</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/16/Linux/" title="Linux"><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/10.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux"/></a><div class="content"><a class="title" href="/2021/09/16/Linux/" title="Linux">Linux</a><time datetime="2021-09-16T13:55:01.000Z" title="发表于 2021-09-16 21:55:01">2021-09-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/10/JavaEE/Git&amp;GitHub/" title="Git&amp;GitHub"><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/1.1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git&amp;GitHub"/></a><div class="content"><a class="title" href="/2021/08/10/JavaEE/Git&amp;GitHub/" title="Git&amp;GitHub">Git&amp;GitHub</a><time datetime="2021-08-10T07:56:01.000Z" title="发表于 2021-08-10 15:56:01">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/10/JavaEE/vi:vim%E4%BD%BF%E7%94%A8/" title="vi/vim使用"><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/1.2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vi/vim使用"/></a><div class="content"><a class="title" href="/2021/08/10/JavaEE/vi:vim%E4%BD%BF%E7%94%A8/" title="vi/vim使用">vi/vim使用</a><time datetime="2021-08-10T07:56:01.000Z" title="发表于 2021-08-10 15:56:01">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/10/Java%E5%9F%BA%E7%A1%80%E6%A0%B8%E5%BF%83/Ecilipse%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Ecilipse常用快捷键、JavaBean(知识拓展)"><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/12.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ecilipse常用快捷键、JavaBean(知识拓展)"/></a><div class="content"><a class="title" href="/2021/08/10/Java%E5%9F%BA%E7%A1%80%E6%A0%B8%E5%BF%83/Ecilipse%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="Ecilipse常用快捷键、JavaBean(知识拓展)">Ecilipse常用快捷键、JavaBean(知识拓展)</a><time datetime="2021-08-10T02:56:01.000Z" title="发表于 2021-08-10 10:56:01">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/10/Java%E5%9F%BA%E7%A1%80%E6%A0%B8%E5%BF%83/Java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" title="Java核心基础"><img src="https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/Blog/Sourse/8.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java核心基础"/></a><div class="content"><a class="title" href="/2021/08/10/Java%E5%9F%BA%E7%A1%80%E6%A0%B8%E5%BF%83/Java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" title="Java核心基础">Java核心基础</a><time datetime="2021-08-10T02:55:01.000Z" title="发表于 2021-08-10 10:55:01">2021-08-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/Benson-QAQ/imgbed/P1/IMG_6839.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Benson</div><div class="footer_custom_text">Hi , Welcome to my <a href="https://Benson-Q.github.io">Blog</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !true) {
+  if (true) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="8113690793" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/hnxzm03y9n2l9s14l4x8pogouzm6wuqg.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
